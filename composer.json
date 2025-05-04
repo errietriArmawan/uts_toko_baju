@@ -54,7 +54,13 @@
         "test": [
             "@php artisan config:clear --ansi",
             "@php artisan test"
+        ],
+        "post-install-cmd": [
+            "@php artisan key:generate",
+            "@php artisan config:cache",
+            "@php artisan migrate --force"
         ]
+
     },
     "extra": {
         "laravel": {
